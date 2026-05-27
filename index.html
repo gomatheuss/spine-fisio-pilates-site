@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spine Fisio Pilates — Brasília, DF</title>
+  <meta name="description" content="Pilates clássico e contemporâneo com fisioterapeutas certificados internacionalmente. Atendimento exclusivo com no máximo 2 alunos por aula. SCRN 710/711 Bloco C, Brasília, DF." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --purple: #7F3D9F;
+      --purple-dark: #6a318a;
+      --purple-light: #f3eaf8;
+      --purple-footer: #1a0829;
+      --green: #9AC525;
+      --green-dark: #7fa11e;
+      --bg: #FAFAF8;
+      --text: #1A1A1A;
+      --text-soft: #6B6B6B;
+      --border: rgba(127, 61, 159, 0.12);
+      --shadow-card: 0 4px 32px -8px rgba(127, 61, 159, 0.14);
+      --shadow-hover: 0 12px 48px -8px rgba(127, 61, 159, 0.22);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+
+    .display {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.6875rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--purple);
+      background: var(--purple-light);
+      padding: 0.3rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+    .eyebrow-light {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.6875rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.12);
+      padding: 0.3rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+
+    .container { max-width: 1320px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 7rem 0; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      width: calc(100% - 3rem);
+      max-width: 1100px;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(250, 250, 248, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(127, 61, 159, 0.14);
+      border-radius: 100px;
+      padding: 0.75rem 1.25rem 0.75rem 1.5rem;
+      box-shadow: 0 4px 24px -4px rgba(127, 61, 159, 0.12), inset 0 1px 0 rgba(255,255,255,0.7);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; }
+    .nav-logo-img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--border); }
+    .nav-logo-text { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 0.9375rem; color: var(--text); letter-spacing: -0.01em; }
+    .nav-logo-text span { color: var(--purple); }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
+    .nav-links a { font-size: 0.8125rem; font-weight: 400; color: var(--text-soft); padding: 0.45rem 0.875rem; border-radius: 100px; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+    .nav-links a:hover { color: var(--purple); background: var(--purple-light); }
+    .nav-cta { display: flex; align-items: center; gap: 0.5rem; background: var(--purple); color: #fff !important; font-size: 0.8125rem !important; font-weight: 500 !important; padding: 0.5rem 1.125rem !important; border-radius: 100px !important; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important; }
+    .nav-cta:hover { background: var(--purple-dark) !important; color: #fff !important; transform: translateY(-1px); box-shadow: 0 6px 20px -4px rgba(127, 61, 159, 0.4) !important; }
+    .nav-cta:active { transform: scale(0.98) !important; }
+    .nav-cta-icon { width: 22px; height: 22px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 0.5rem; background: none; border: none; }
+    .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--text); border-radius: 4px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); transform-origin: center; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .nav-mobile { display: none; position: fixed; inset: 0; background: rgba(250, 250, 248, 0.96); backdrop-filter: blur(24px); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; }
+    .nav-mobile.open { display: flex; opacity: 1; pointer-events: all; }
+    .nav-mobile a { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600; color: var(--text); transition: color 0.2s; }
+    .nav-mobile a:hover { color: var(--purple); }
+    .nav-mobile .nav-cta-mobile { margin-top: 1rem; background: var(--purple); color: #fff !important; font-family: 'DM Sans', sans-serif !important; font-size: 1rem !important; font-weight: 500 !important; padding: 0.875rem 2.5rem !important; border-radius: 100px; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100dvh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(15, 4, 26, 0.62) 0%,
+        rgba(15, 4, 26, 0.52) 45%,
+        rgba(15, 4, 26, 0.72) 100%
+      );
+    }
+
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.055;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      padding: 9rem 2rem 6rem;
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-h1 {
+      font-size: clamp(3.25rem, 6vw, 5.5rem);
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+    .hero-h1 em {
+      color: var(--purple);
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-sub {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      background: var(--purple); color: #fff; font-size: 0.875rem; font-weight: 500;
+      padding: 0.875rem 1.5rem; border-radius: 100px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 16px -4px rgba(127, 61, 159, 0.45);
+    }
+    .btn-primary:hover { background: var(--purple-dark); transform: translateY(-2px); box-shadow: 0 8px 28px -4px rgba(127, 61, 159, 0.55); }
+    .btn-primary:active { transform: scale(0.98); }
+    .btn-primary .btn-icon { width: 26px; height: 26px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8125rem; flex-shrink: 0; transition: transform 0.25s ease; }
+    .btn-primary:hover .btn-icon { transform: translateX(2px) translateY(-1px); }
+
+    .btn-secondary-light {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: rgba(255,255,255,0.85); font-size: 0.875rem; font-weight: 400;
+      padding: 0.875rem 1.25rem; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: all 0.25s ease;
+    }
+    .btn-secondary-light:hover { border-color: rgba(255,255,255,0.6); color: #fff; background: rgba(255,255,255,0.08); }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 3rem;
+      right: 4rem;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      text-align: center;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+    }
+    .hero-badge-num { font-family: 'Playfair Display', serif; font-size: 2.25rem; font-weight: 700; color: var(--green); line-height: 1; }
+    .hero-badge-label { font-size: 0.6875rem; font-weight: 500; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.25rem; }
+
+    .hero-scroll-hint {
+      position: absolute; bottom: 3rem; left: 4rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      font-size: 0.625rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    .hero-scroll-hint::before { content: ''; display: block; width: 1px; height: 36px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.3)); }
+
+    /* ─── PILLARS ─── */
+    #pillars { background: #fff; padding: 5rem 0; }
+    .pillars-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 3rem; align-items: center; }
+    .pillars-list { display: flex; flex-direction: column; gap: 2.5rem; }
+    .pillar-item { display: flex; gap: 1.25rem; align-items: flex-start; opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .pillar-item.visible { opacity: 1; transform: translateY(0); }
+    .pillar-item:nth-child(2) { transition-delay: 0.1s; }
+    .pillar-item:nth-child(3) { transition-delay: 0.2s; }
+    .pillar-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--purple-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .pillar-icon svg { width: 22px; height: 22px; }
+    .pillar-title { font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 400; margin-bottom: 0.35rem; color: var(--text); }
+    .pillar-desc { font-size: 0.9rem; color: var(--text-soft); line-height: 1.6; }
+    .pillars-center-img { width: 320px; border-radius: 2rem; overflow: hidden; box-shadow: var(--shadow-card); flex-shrink: 0; }
+    .pillars-center-img img { width: 100%; height: 480px; object-fit: cover; }
+
+    /* ─── MODALIDADES ─── */
+    #modalidades { padding: 7rem 0; }
+    .modalidades-header { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; margin-bottom: 4rem; }
+    .modalidades-h2 { font-size: clamp(2.25rem, 3.5vw, 3.25rem); }
+    .modalidades-desc { font-size: 1rem; color: var(--text-soft); padding-bottom: 0.5rem; }
+    .modalidades-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
+    .modal-card {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+    .modal-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+
+    .modal-card-photo {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      display: block;
+    }
+    .modal-card:hover .modal-card-photo { transform: scale(1.04); }
+
+    .modal-card-body { padding: 1.5rem 1.75rem 1.75rem; }
+    .modal-tag { display: inline-block; background: var(--green); color: #1A1A1A; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 100px; margin-bottom: 0.75rem; }
+    .modal-title { font-family: 'Playfair Display', serif; font-size: 1.375rem; font-weight: 400; color: var(--text); margin-bottom: 0.5rem; line-height: 1.25; }
+    .modal-desc { font-size: 0.875rem; color: var(--text-soft); font-weight: 300; line-height: 1.65; }
+
+    /* ─── GALERIA ─── */
+    #galeria { padding: 5rem 0; background: #fff; overflow: hidden; }
+    .galeria-header { text-align: center; margin-bottom: 3.5rem; }
+    .galeria-h2 { font-size: clamp(2rem, 3vw, 2.75rem); }
+    .galeria-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto; gap: 1rem; }
+    .gal-item { border-radius: 1.25rem; overflow: hidden; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .gal-item:hover { transform: scale(1.015); }
+    .gal-item img { width: 100%; height: 100%; object-fit: cover; }
+    .gal-item:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+    .gal-item:nth-child(1) img { height: 480px; }
+    .gal-item:nth-child(2) img { height: 230px; }
+    .gal-item:nth-child(3) img { height: 230px; }
+    .gal-item:nth-child(4) img { height: 230px; }
+    .gal-item:nth-child(5) img { height: 230px; }
+
+    /* ─── BENEFÍCIOS ─── */
+    #beneficios { padding: 7rem 0; background: var(--purple-light); }
+    .beneficios-header { text-align: center; margin-bottom: 4rem; }
+    .beneficios-h2 { font-size: clamp(2rem, 3vw, 2.75rem); }
+    .beneficios-sub { font-size: 1rem; color: var(--text-soft); max-width: 520px; margin: 1rem auto 0; }
+    .beneficios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+    .beneficio-card {
+      background: #fff;
+      border: 1px solid rgba(127, 61, 159, 0.08);
+      border-radius: 1.5rem;
+      padding: 2rem 1.75rem;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .beneficio-card.visible { opacity: 1; transform: translateY(0); }
+    .beneficio-card:nth-child(2) { transition-delay: 0.07s; }
+    .beneficio-card:nth-child(3) { transition-delay: 0.14s; }
+    .beneficio-card:nth-child(4) { transition-delay: 0.21s; }
+    .beneficio-card:nth-child(5) { transition-delay: 0.28s; }
+    .beneficio-card:nth-child(6) { transition-delay: 0.35s; }
+    .beneficio-card:hover { border-color: var(--purple); box-shadow: var(--shadow-card); transform: translateY(-4px); }
+
+    .beneficio-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--purple);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .beneficio-title { font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 400; margin-bottom: 0.5rem; }
+    .beneficio-desc { font-size: 0.875rem; color: var(--text-soft); }
+
+    /* ─── SOBRE ─── */
+    #sobre { background: #fff; padding: 7rem 0; }
+    .sobre-header { text-align: center; margin-bottom: 5rem; }
+    .sobre-h2 { font-size: clamp(2rem, 3vw, 2.75rem); }
+
+    .sobre-profissional {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 5rem;
+    }
+    .sobre-profissional:last-child { margin-bottom: 0; }
+    .sobre-profissional--reverse { grid-template-columns: 1fr 380px; }
+    .sobre-profissional--reverse .sobre-prof-img { order: 2; }
+    .sobre-profissional--reverse .sobre-prof-text { order: 1; }
+
+    .sobre-prof-img-outer {
+      border-radius: 2rem;
+      background: var(--purple-light);
+      padding: 0.5rem;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+    .sobre-prof-img-inner { border-radius: 1.6rem; overflow: hidden; }
+    .sobre-prof-img-inner img { width: 100%; object-fit: cover; object-position: center top; display: block; }
+
+    .sobre-cert-badge {
+      position: absolute;
+      bottom: -1rem;
+      right: 1rem;
+      background: var(--purple);
+      color: #fff;
+      border-radius: 1rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      box-shadow: 0 8px 24px -4px rgba(127, 61, 159, 0.4);
+      max-width: 210px;
+      line-height: 1.4;
+    }
+    .sobre-cert-badge strong { display: block; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.75; margin-bottom: 0.2rem; }
+
+    .sobre-prof-text { display: flex; flex-direction: column; gap: 1rem; }
+    .sobre-role { font-size: 0.8125rem; font-weight: 500; color: var(--purple); text-transform: uppercase; letter-spacing: 0.1em; }
+    .sobre-name { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 400; color: var(--text); line-height: 1.15; }
+    .sobre-bio { font-size: 0.9375rem; color: var(--text-soft); line-height: 1.7; }
+    .sobre-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .sobre-tag { background: var(--purple-light); color: var(--purple); border-radius: 100px; padding: 0.3rem 0.875rem; font-size: 0.8125rem; font-weight: 500; }
+
+    /* ─── CERTS BAR ─── */
+    .certs-bar { background: var(--purple); padding: 1.25rem 0; overflow: hidden; }
+    .certs-track { display: flex; gap: 3.5rem; white-space: nowrap; animation: marquee 28s linear infinite; width: max-content; }
+    .certs-track-inner { display: flex; gap: 3.5rem; align-items: center; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .cert-item { display: flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; font-weight: 500; color: rgba(255,255,255,0.85); letter-spacing: 0.04em; }
+    .cert-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; flex-shrink: 0; }
+
+    /* ─── DEPOIMENTOS ─── */
+    #depoimentos { padding: 7rem 0; }
+    .depoimentos-header { text-align: center; margin-bottom: 4rem; }
+    .depoimentos-h2 { font-size: clamp(2rem, 3vw, 2.75rem); }
+    .depoimentos-scroll { display: flex; gap: 1.5rem; overflow-x: auto; padding: 0.5rem 0 2rem; scrollbar-width: none; scroll-snap-type: x mandatory; }
+    .depoimentos-scroll::-webkit-scrollbar { display: none; }
+    .depo-card { min-width: 360px; max-width: 360px; background: #fff; border: 1px solid var(--border); border-radius: 1.5rem; padding: 2rem; scroll-snap-align: start; transition: transform 0.3s ease, box-shadow 0.3s ease; flex-shrink: 0; }
+    .depo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+    .depo-stars { display: flex; gap: 0.2rem; margin-bottom: 1rem; color: var(--green); font-size: 0.875rem; }
+    .depo-text { font-size: 0.9375rem; color: var(--text); line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; font-family: 'Playfair Display', serif; font-weight: 400; }
+    .depo-author { display: flex; align-items: center; gap: 0.875rem; }
+    .depo-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--purple-light); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--purple); flex-shrink: 0; }
+    .depo-name { font-size: 0.875rem; font-weight: 500; }
+    .depo-since { font-size: 0.75rem; color: var(--text-soft); }
+
+    /* ─── AGENDAMENTO ─── */
+    #agendamento { background: var(--purple); padding: 7rem 0; position: relative; overflow: hidden; }
+    #agendamento::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(154,197,37,0.15) 0%, transparent 70%); top: -200px; right: -100px; pointer-events: none; }
+    .agendamento-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .agendamento-content { position: relative; z-index: 1; }
+    .agendamento-h2 { font-size: clamp(2.25rem, 3.5vw, 3.25rem); color: #fff; margin-bottom: 1.25rem; }
+    .agendamento-sub { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.65; margin-bottom: 2.5rem; }
+    .agendamento-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: var(--green); color: #1A1A1A; font-weight: 600; font-size: 0.9375rem; padding: 1rem 2rem; border-radius: 100px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 20px -4px rgba(154,197,37,0.5); }
+    .agendamento-btn:hover { background: #b8db30; transform: translateY(-2px); box-shadow: 0 8px 28px -4px rgba(154,197,37,0.6); }
+    .agendamento-btn:active { transform: scale(0.98); }
+    .agendamento-btn .btn-icon { width: 28px; height: 28px; background: rgba(0,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .agendamento-info { position: relative; z-index: 1; }
+    .info-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18); border-radius: 1.5rem; padding: 2rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.15); }
+    .info-row { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .info-row:first-child { padding-top: 0; }
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-icon { width: 38px; height: 38px; background: rgba(255,255,255,0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .info-icon svg { width: 18px; height: 18px; }
+    .info-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.55); margin-bottom: 0.2rem; }
+    .info-value { font-size: 0.9375rem; color: rgba(255,255,255,0.92); font-weight: 400; }
+
+    /* ─── FAQ ─── */
+    #faq { padding: 7rem 0; background: #fff; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .faq-sidebar { position: sticky; top: 8rem; }
+    .faq-h2 { font-size: clamp(2.25rem, 3vw, 3rem); margin-bottom: 1.25rem; }
+    .faq-sub { font-size: 1rem; color: var(--text-soft); margin-bottom: 2rem; }
+    .faq-contact-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--purple); font-size: 0.875rem; font-weight: 500; transition: gap 0.2s ease; }
+    .faq-contact-link:hover { gap: 0.75rem; }
+    .faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .faq-item { border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; transition: border-color 0.25s ease; }
+    .faq-item.open { border-color: var(--purple); }
+    .faq-question { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 1.5rem; cursor: pointer; font-size: 0.9375rem; font-weight: 500; color: var(--text); background: #fff; border: none; width: 100%; text-align: left; transition: color 0.2s ease; }
+    .faq-item.open .faq-question { color: var(--purple); }
+    .faq-chevron { width: 24px; height: 24px; background: var(--purple-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); background: var(--purple); color: #fff; }
+    .faq-chevron svg { width: 12px; height: 12px; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer p { padding: 0 1.5rem 1.25rem; font-size: 0.9rem; color: var(--text-soft); line-height: 1.7; }
+
+    /* ─── CONTATO ─── */
+    #contato { padding: 7rem 0; }
+    .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contato-h2 { font-size: clamp(2rem, 3vw, 2.75rem); margin-bottom: 1rem; }
+    .contato-sub { font-size: 1rem; color: var(--text-soft); margin-bottom: 2.5rem; }
+    .contato-channels { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem; }
+    .channel-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: #fff; border: 1px solid var(--border); border-radius: 1rem; transition: all 0.25s ease; text-decoration: none; color: var(--text); }
+    .channel-item:hover { border-color: var(--purple); box-shadow: var(--shadow-card); transform: translateX(4px); }
+    .channel-icon { width: 40px; height: 40px; background: var(--purple-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--purple); }
+    .channel-icon svg { width: 18px; height: 18px; }
+    .channel-label { font-size: 0.75rem; color: var(--text-soft); }
+    .channel-value { font-size: 0.9375rem; font-weight: 500; }
+    .contato-map { border-radius: 1.75rem; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-card); }
+    .contato-map iframe { width: 100%; height: 460px; border: none; display: block; }
+    .horario-card { background: var(--purple-light); border-radius: 1rem; padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+    .horario-icon { color: var(--purple); }
+    .horario-icon svg { width: 20px; height: 20px; }
+    .horario-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--purple); opacity: 0.7; margin-bottom: 0.2rem; }
+    .horario-text { font-size: 0.9375rem; font-weight: 500; color: var(--text); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--purple-footer);
+      color: rgba(255,255,255,0.7);
+      padding: 3.5rem 0 2rem;
+    }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
+    .footer-brand { display: flex; flex-direction: column; gap: 1rem; }
+    .footer-logo-wrap { display: flex; align-items: center; gap: 0.75rem; }
+    .footer-logo-img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(127, 61, 159, 0.5); }
+    .footer-logo-text { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: #fff; }
+    .footer-logo-text span { color: var(--green); }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.45); max-width: 280px; line-height: 1.6; }
+    .footer-social { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
+    .footer-social a { width: 36px; height: 36px; background: rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); transition: all 0.2s ease; }
+    .footer-social a:hover { background: var(--purple); color: #fff; }
+    .footer-social a svg { width: 16px; height: 16px; }
+    .footer-col-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-bottom: 1rem; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+    .footer-links a { font-size: 0.875rem; color: rgba(255,255,255,0.55); transition: color 0.2s ease; }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.8125rem; color: rgba(255,255,255,0.3); }
+
+    /* ─── ANIMATIONS ─── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .pillars-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .pillars-center-img { width: 100%; }
+      .pillars-center-img img { height: 320px; }
+      .sobre-profissional { grid-template-columns: 1fr; gap: 2.5rem; }
+      .sobre-profissional--reverse { grid-template-columns: 1fr; }
+      .sobre-profissional--reverse .sobre-prof-img { order: -1; }
+      .sobre-profissional--reverse .sobre-prof-text { order: 0; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      section { padding: 4.5rem 0; }
+
+      .hero-badge { bottom: 1.5rem; right: 1.5rem; }
+      .hero-scroll-hint { display: none; }
+
+      .modalidades-header { grid-template-columns: 1fr; gap: 1rem; }
+      .modalidades-grid { grid-template-columns: 1fr; }
+
+      .galeria-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gal-item:nth-child(1) { grid-column: 1 / -1; grid-row: 1; }
+      .gal-item:nth-child(1) img { height: 250px; }
+      .gal-item:nth-child(n+2) img { height: 180px; }
+
+      .beneficios-grid { grid-template-columns: 1fr; }
+
+      .sobre-profissional { grid-template-columns: 1fr !important; }
+      .sobre-profissional--reverse .sobre-prof-img { order: -1 !important; }
+
+      .agendamento-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .faq-grid { grid-template-columns: 1fr; }
+      .faq-sidebar { position: static; }
+
+      .contato-grid { grid-template-columns: 1fr; }
+
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+      .container { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav role="navigation" aria-label="Navegação principal">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Spine Fisio Pilates — Início">
+        <img src="fotos-site-atual/spine%20logo.jpg" alt="Logo" class="nav-logo-img" />
+        <span class="nav-logo-text">Spine <span>Fisio</span> Pilates</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#modalidades">Transformações</a></li>
+        <li><a href="#sobre">Profissionais</a></li>
+        <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="https://wa.me/5561992219300?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20aula%20experimental%20na%20Spine%20Fisio%20Pilates." target="_blank" rel="noopener" class="nav-links nav-cta" aria-label="Agendar aula via WhatsApp">
+        Agendar aula
+        <span class="nav-cta-icon" aria-hidden="true">↗</span>
+      </a>
+      <button class="nav-hamburger" aria-label="Abrir menu" aria-expanded="false" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+    <a href="#modalidades" class="nav-mobile-link">Transformações</a>
+    <a href="#sobre" class="nav-mobile-link">Profissionais</a>
+    <a href="#beneficios" class="nav-mobile-link">Benefícios</a>
+    <a href="#faq" class="nav-mobile-link">FAQ</a>
+    <a href="#contato" class="nav-mobile-link">Contato</a>
+    <a href="https://wa.me/5561992219300?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20aula%20experimental%20na%20Spine%20Fisio%20Pilates." target="_blank" rel="noopener" class="nav-cta-mobile">Agendar aula ↗</a>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero" aria-label="Apresentação">
+    <div class="hero-bg">
+      <img
+        src="fotos-site-atual/spine%20foto%20capa%202.png"
+        alt="Aula de Pilates no estúdio Spine Fisio Pilates"
+        loading="eager"
+      />
+    </div>
+    <div class="hero-grain" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <span class="eyebrow-light reveal">Pilates Clínico · Brasília, DF</span>
+      <h1 class="display hero-h1 reveal reveal-delay-1">
+        Movimento com<br />
+        <em>precisão</em> e propósito
+      </h1>
+      <p class="hero-sub reveal reveal-delay-2">
+        Fisioterapeutas com certificação internacional. Atendimento exclusivo com no máximo 2 alunos por aula — para que cada sessão seja inteiramente sua.
+      </p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="https://wa.me/5561992219300?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20aula%20experimental%20na%20Spine%20Fisio%20Pilates." target="_blank" rel="noopener" class="btn-primary" aria-label="Agendar aula experimental via WhatsApp">
+          Agendar aula grátis
+          <span class="btn-icon" aria-hidden="true">↗</span>
+        </a>
+        <a href="#sobre" class="btn-secondary-light">Conheça a equipe</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- ─── PILLARS ─── -->
+  <section id="pillars" aria-labelledby="pillars-heading">
+    <div class="container">
+      <div class="pillars-grid">
+
+        <div class="pillars-list">
+          <span class="eyebrow reveal">Por que Spine</span>
+          <div class="pillar-item reveal">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg fill="none" stroke="#7F3D9F" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z"/><path d="M12 14c-5.33 0-8 2.686-8 4v1h16v-1c0-1.314-2.67-4-8-4z"/></svg>
+            </div>
+            <div>
+              <div class="pillar-title">Atendimento personalizado</div>
+              <p class="pillar-desc">Nunca mais de 2 alunos por aula. Você recebe atenção total do fisioterapeuta em cada exercício, garantindo correção postural e progressão segura.</p>
+            </div>
+          </div>
+          <div class="pillar-item reveal">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg fill="none" stroke="#7F3D9F" stroke-width="1.75" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9S3 16.97 3 12 7.03 3 12 3s9 4.03 9 9z"/></svg>
+            </div>
+            <div>
+              <div class="pillar-title">Fisioterapeutas certificados</div>
+              <p class="pillar-desc">Polestar Education / PMA (Pilates Contemporâneo) e 4ª geração de Joseph Pilates (Pilates Clássico). A maior autoridade em movimento de Brasília.</p>
+            </div>
+          </div>
+          <div class="pillar-item reveal">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg fill="none" stroke="#7F3D9F" stroke-width="1.75" viewBox="0 0 24 24"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+            </div>
+            <div>
+              <div class="pillar-title">Clássico e Contemporâneo</div>
+              <p class="pillar-desc">O método original de Joseph Pilates e a evolução clínica da Polestar Education, combinados para a abordagem mais completa para cada objetivo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillars-center-img reveal">
+          <img
+            src="fotos-site-atual/spine-autoridade-certificados-mauro20-6e290cf1.jpg"
+            alt="Fisioterapeuta Mauro Cezar com certificações internacionais"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="pillars-list">
+          <div style="height: 3rem;"></div>
+          <div class="pillar-item reveal">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg fill="none" stroke="#7F3D9F" stroke-width="1.75" viewBox="0 0 24 24"><path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0z"/><path d="M1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z"/></svg>
+            </div>
+            <div>
+              <div class="pillar-title">Solo e aparelhos</div>
+              <p class="pillar-desc">Exercícios no solo e em equipamentos Physio Pilates e Equipilates de última geração — para diferentes níveis, objetivos e condições clínicas.</p>
+            </div>
+          </div>
+          <div class="pillar-item reveal">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg fill="none" stroke="#7F3D9F" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 21a9 9 0 100-18 9 9 0 000 18z"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div>
+              <div class="pillar-title">Horários flexíveis</div>
+              <p class="pillar-desc">Atendemos de segunda a sexta, das 7h00 às 20h30. Agendamento direto pelo WhatsApp, sem burocracia.</p>
+            </div>
+          </div>
+          <div class="pillar-item reveal">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg fill="none" stroke="#7F3D9F" stroke-width="1.75" viewBox="0 0 24 24"><path d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802"/></svg>
+            </div>
+            <div>
+              <div class="pillar-title">Atendimento bilíngue</div>
+              <p class="pillar-desc">Atendemos em português e inglês. Ideal para residentes internacionais e diplomatas do Plano Piloto.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MODALIDADES ─── -->
+  <section id="modalidades" aria-labelledby="modalidades-heading">
+    <div class="container">
+      <div class="modalidades-header">
+        <div>
+          <span class="eyebrow reveal">O que oferecemos</span>
+          <h2 class="display modalidades-h2 reveal" id="modalidades-heading">
+            Pilates que<br />
+            <span style="color: var(--purple);">transforma</span>
+          </h2>
+        </div>
+        <p class="modalidades-desc reveal reveal-delay-1">
+          Mais do que exercício — um protocolo clínico conduzido por fisioterapeutas certificados para recuperar, fortalecer e mover com qualidade pelo resto da vida.
+        </p>
+      </div>
+
+      <div class="modalidades-grid">
+
+        <div class="modal-card reveal">
+          <img class="modal-card-photo" src="fotos-site-atual/spine-recuperacao%20de%20patologias.jpg" alt="Recuperação de patologias através do Pilates clínico" loading="lazy" />
+          <div class="modal-card-body">
+            <span class="modal-tag">Reabilitação</span>
+            <h3 class="modal-title">Recuperação de Patologias</h3>
+            <p class="modal-desc">Pós-cirúrgico, hérnia de disco, escoliose, lesões musculoesqueléticas e dores crônicas. Protocolo individualizado com supervisão fisioterapêutica desde a primeira sessão.</p>
+          </div>
+        </div>
+
+        <div class="modal-card reveal reveal-delay-1">
+          <img class="modal-card-photo" src="fotos-site-atual/spine-fortalecimento%20e%20longevidade.jpg" alt="Fortalecimento corporal total para longevidade" loading="lazy" />
+          <div class="modal-card-body">
+            <span class="modal-tag">Longevidade</span>
+            <h3 class="modal-title">Fortalecimento para Longevidade</h3>
+            <p class="modal-desc">Construção de um corpo forte, funcional e saudável ao longo dos anos. Trabalho de resistência, estabilidade articular e mobilidade que protege o corpo da idade.</p>
+          </div>
+        </div>
+
+        <div class="modal-card reveal reveal-delay-2">
+          <img class="modal-card-photo" src="fotos-site-atual/spine-exercicio18-5f1106e5.jpg" alt="Consciência corporal e conexão mente-corpo" loading="lazy" />
+          <div class="modal-card-body">
+            <span class="modal-tag">Consciência</span>
+            <h3 class="modal-title">Consciência Corporal</h3>
+            <p class="modal-desc">Propriocepção, respiração e conexão mente-corpo. Aprenda a perceber, controlar e usar seu corpo com inteligência — habilidade que muda a postura e o movimento no dia a dia.</p>
+          </div>
+        </div>
+
+        <div class="modal-card reveal reveal-delay-3">
+          <img class="modal-card-photo" src="fotos-site-atual/spine-forca%20e%20equilibrio.jpg" alt="Força, equilíbrio e performance física" loading="lazy" />
+          <div class="modal-card-body">
+            <span class="modal-tag">Performance</span>
+            <h3 class="modal-title">Força e Equilíbrio</h3>
+            <p class="modal-desc">Desenvolvimento de força funcional, equilíbrio e coordenação motora. Para atletas que querem performance, e para todos que querem se mover melhor em qualquer atividade.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALERIA ─── -->
+  <section id="galeria" aria-labelledby="galeria-heading">
+    <div class="container">
+      <div class="galeria-header">
+        <span class="eyebrow reveal">Nosso espaço</span>
+        <h2 class="display galeria-h2 reveal" id="galeria-heading">O estúdio</h2>
+      </div>
+      <div class="galeria-grid">
+        <div class="gal-item reveal">
+          <img src="fotos-site-atual/spine-entrada14-50e0a4b6.jpg" alt="Entrada do estúdio Spine Fisio Pilates" loading="lazy" />
+        </div>
+        <div class="gal-item reveal reveal-delay-1">
+          <img src="fotos-site-atual/spine-area%20do%20cafe25-91845a2f.jpg" alt="Área de convivência do estúdio" loading="lazy" />
+        </div>
+        <div class="gal-item reveal reveal-delay-2">
+          <img src="fotos-site-atual/spine-equipamentos16-56af6054.jpg" alt="Aparelho de Pilates" loading="lazy" />
+        </div>
+        <div class="gal-item reveal reveal-delay-1">
+          <img src="fotos-site-atual/spine-equipamentos28-bf79af40.jpg" alt="Equipamentos de Pilates" loading="lazy" />
+        </div>
+        <div class="gal-item reveal reveal-delay-2">
+          <img src="fotos-site-atual/spine-equipamentos33-ea0a741b.jpg" alt="Estúdio Spine Fisio Pilates" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BENEFÍCIOS ─── -->
+  <section id="beneficios" aria-labelledby="beneficios-heading">
+    <div class="container">
+      <div class="beneficios-header">
+        <span class="eyebrow reveal">Por que nos escolher</span>
+        <h2 class="display beneficios-h2 reveal" id="beneficios-heading">6 razões para começar hoje</h2>
+        <p class="beneficios-sub reveal reveal-delay-1">
+          Spine não é academia. É uma clínica de movimento com a atenção que seu corpo merece.
+        </p>
+      </div>
+      <div class="beneficios-grid">
+        <article class="beneficio-card">
+          <div class="beneficio-num" aria-hidden="true">01</div>
+          <h3 class="beneficio-title">Segurança clínica</h3>
+          <p class="beneficio-desc">Todos os professores são fisioterapeutas, não apenas instrutores. Seu histórico clínico é considerado em cada aula.</p>
+        </article>
+        <article class="beneficio-card">
+          <div class="beneficio-num" aria-hidden="true">02</div>
+          <h3 class="beneficio-title">Máximo 2 alunos</h3>
+          <p class="beneficio-desc">Sem aulas lotadas. Atenção individualizada em cada exercício, com correção postural em tempo real.</p>
+        </article>
+        <article class="beneficio-card">
+          <div class="beneficio-num" aria-hidden="true">03</div>
+          <h3 class="beneficio-title">Método autêntico</h3>
+          <p class="beneficio-desc">4ª geração de Joseph Pilates e Polestar Education. Os métodos mais respeitados do mundo, disponíveis em Brasília.</p>
+        </article>
+        <article class="beneficio-card">
+          <div class="beneficio-num" aria-hidden="true">04</div>
+          <h3 class="beneficio-title">Para qualquer fase</h3>
+          <p class="beneficio-desc">Iniciantes, atletas, gestantes, pós-cirúrgicos, idosos. Adaptamos o método para onde você está agora.</p>
+        </article>
+        <article class="beneficio-card">
+          <div class="beneficio-num" aria-hidden="true">05</div>
+          <h3 class="beneficio-title">Localização central</h3>
+          <p class="beneficio-desc">SCRN 710/711 Bloco C, Asa Norte — fácil acesso a partir de qualquer ponto do Plano Piloto.</p>
+        </article>
+        <article class="beneficio-card">
+          <div class="beneficio-num" aria-hidden="true">06</div>
+          <h3 class="beneficio-title">Bilíngue</h3>
+          <p class="beneficio-desc">Atendemos em português e inglês. Ideal para diplomatas, expatriados e a comunidade internacional de Brasília.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SOBRE ─── -->
+  <section id="sobre" aria-labelledby="sobre-heading">
+    <div class="container">
+      <div class="sobre-header">
+        <span class="eyebrow reveal">Quem somos</span>
+        <h2 class="display sobre-h2 reveal" id="sobre-heading">A equipe por trás do método</h2>
+      </div>
+
+      <!-- Mauro: imagem esquerda, texto direita -->
+      <div class="sobre-profissional reveal">
+        <div class="sobre-prof-img">
+          <div class="sobre-prof-img-outer">
+            <div class="sobre-prof-img-inner">
+              <img
+                src="fotos-site-atual/spine-socio-mauro.jpg"
+                alt="Mauro Cezar, fisioterapeuta e especialista em Pilates Contemporâneo"
+                style="height: 500px;"
+                loading="lazy"
+              />
+            </div>
+            <div class="sobre-cert-badge" aria-label="Certificação: Polestar Education / PMA">
+              <strong>Certificação</strong>
+              Polestar Education<br />PMA — Pilates Contemporâneo
+            </div>
+          </div>
+        </div>
+        <div class="sobre-prof-text">
+          <p class="sobre-role">Fisioterapeuta · Co-fundador</p>
+          <h3 class="sobre-name">Mauro Cezar</h3>
+          <p class="sobre-bio">
+            Fisioterapeuta com certificação internacional em Pilates Contemporâneo pela Polestar Education — uma das escolas mais respeitadas do mundo, reconhecida pela PMA (Pilates Method Alliance). Há anos dedicado à integração entre fisioterapia clínica e Pilates como ferramenta de reabilitação e prevenção.
+          </p>
+          <p class="sobre-bio">
+            Sua abordagem une o rigor científico da fisioterapia com a sensibilidade de quem conhece profundamente o corpo humano em movimento — oferecendo a cada aluno um programa que respeita sua história clínica e seus objetivos de vida.
+          </p>
+          <div class="sobre-tags">
+            <span class="sobre-tag">Fisioterapeuta</span>
+            <span class="sobre-tag">Polestar Education</span>
+            <span class="sobre-tag">PMA Certified</span>
+            <span class="sobre-tag">Pilates Contemporâneo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mateus: texto esquerda, imagem direita -->
+      <div class="sobre-profissional sobre-profissional--reverse reveal reveal-delay-1">
+        <div class="sobre-prof-text">
+          <p class="sobre-role">Fisioterapeuta · Co-fundador</p>
+          <h3 class="sobre-name">Mateus Cezar <span style="font-size: 0.85em; color: var(--text-soft); font-style: italic; font-weight: 400;">(Matchollas)</span></h3>
+          <p class="sobre-bio">
+            Fisioterapeuta com certificação internacional em Pilates Clássico — 4ª geração direta de Joseph Pilates. Formado por uma das linhagens mais puras do método original, traz para o estúdio a essência e a integridade do trabalho criado por Pilates no início do século XX.
+          </p>
+          <p class="sobre-bio">
+            É guardião de uma tradição que poucos profissionais no Brasil têm acesso. Cada sequência, cada exercício, cada correção carrega a fidelidade a um sistema que foi desenvolvido ao longo de décadas como ciência do movimento humano.
+          </p>
+          <div class="sobre-tags">
+            <span class="sobre-tag">Fisioterapeuta</span>
+            <span class="sobre-tag">Pilates Clássico</span>
+            <span class="sobre-tag">4ª Geração</span>
+            <span class="sobre-tag">Método Original</span>
+          </div>
+        </div>
+        <div class="sobre-prof-img">
+          <div class="sobre-prof-img-outer">
+            <div class="sobre-prof-img-inner">
+              <img
+                src="fotos-site-atual/spine-socio-matheus.jpg"
+                alt="Mateus Cezar, fisioterapeuta e especialista em Pilates Clássico"
+                style="width: 350px; height: 700px; max-width: none;"
+                loading="lazy"
+              />
+            </div>
+            <div class="sobre-cert-badge" aria-label="Certificação: Pilates Clássico — 4ª geração">
+              <strong>Certificação</strong>
+              Pilates Clássico<br />4ª geração de Joseph Pilates
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── CERTS BAR ─── -->
+  <div class="certs-bar" aria-label="Certificações internacionais">
+    <div class="certs-track" aria-hidden="true">
+      <div class="certs-track-inner">
+        <span class="cert-item"><span class="cert-dot"></span>Polestar Education</span>
+        <span class="cert-item"><span class="cert-dot"></span>PMA — Pilates Method Alliance</span>
+        <span class="cert-item"><span class="cert-dot"></span>Pilates Clássico — 4ª Geração</span>
+        <span class="cert-item"><span class="cert-dot"></span>Fisioterapeutas Registrados CREFITO</span>
+        <span class="cert-item"><span class="cert-dot"></span>Pilates Contemporâneo</span>
+        <span class="cert-item"><span class="cert-dot"></span>Reabilitação Funcional</span>
+        <span class="cert-item"><span class="cert-dot"></span>Bilíngue · PT / EN</span>
+      </div>
+      <div class="certs-track-inner" aria-hidden="true">
+        <span class="cert-item"><span class="cert-dot"></span>Polestar Education</span>
+        <span class="cert-item"><span class="cert-dot"></span>PMA — Pilates Method Alliance</span>
+        <span class="cert-item"><span class="cert-dot"></span>Pilates Clássico — 4ª Geração</span>
+        <span class="cert-item"><span class="cert-dot"></span>Fisioterapeutas Registrados CREFITO</span>
+        <span class="cert-item"><span class="cert-dot"></span>Pilates Contemporâneo</span>
+        <span class="cert-item"><span class="cert-dot"></span>Reabilitação Funcional</span>
+        <span class="cert-item"><span class="cert-dot"></span>Bilíngue · PT / EN</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── DEPOIMENTOS ─── -->
+  <section id="depoimentos" aria-labelledby="depoimentos-heading">
+    <div class="container">
+      <div class="depoimentos-header">
+        <span class="eyebrow reveal">O que dizem</span>
+        <h2 class="display depoimentos-h2 reveal" id="depoimentos-heading">Quem já vive o método</h2>
+      </div>
+      <div class="depoimentos-scroll" role="list" aria-label="Depoimentos de alunos">
+        <article class="depo-card" role="listitem">
+          <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+          <p class="depo-text">"Depois de anos com dores lombares crônicas, o Pilates Clínico na Spine foi o que me deu qualidade de vida de volta. O acompanhamento é completamente diferente de qualquer outro lugar."</p>
+          <div class="depo-author">
+            <div class="depo-avatar" aria-hidden="true">A</div>
+            <div><div class="depo-name">Ana Paula M.</div><div class="depo-since">Aluna desde 2023</div></div>
+          </div>
+        </article>
+        <article class="depo-card" role="listitem">
+          <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+          <p class="depo-text">"Vim me recuperar de uma cirurgia no joelho e fiquei. O Mauro e o Matheus conhecem o corpo humano de um jeito que poucos profissionais conhecem. Recomendo sem hesitar."</p>
+          <div class="depo-author">
+            <div class="depo-avatar" aria-hidden="true">R</div>
+            <div><div class="depo-name">Ricardo F.</div><div class="depo-since">Aluno desde 2022</div></div>
+          </div>
+        </article>
+        <article class="depo-card" role="listitem">
+          <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+          <p class="depo-text">"Como diplomata em Brasília, precisava de um estúdio que atendesse em inglês. A Spine foi a melhor descoberta — método sério, espaço acolhedor e atenção excepcional."</p>
+          <div class="depo-author">
+            <div class="depo-avatar" aria-hidden="true">S</div>
+            <div><div class="depo-name">Sarah K.</div><div class="depo-since">Student since 2024</div></div>
+          </div>
+        </article>
+        <article class="depo-card" role="listitem">
+          <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+          <p class="depo-text">"Nunca imaginei que Pilates poderia ser tão preciso. Com apenas 2 alunos por aula, cada sessão é completamente personalizada. Minha postura e disposição mudaram muito."</p>
+          <div class="depo-author">
+            <div class="depo-avatar" aria-hidden="true">C</div>
+            <div><div class="depo-name">Carla B.</div><div class="depo-since">Aluna desde 2023</div></div>
+          </div>
+        </article>
+        <article class="depo-card" role="listitem">
+          <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+          <p class="depo-text">"Trago minha mãe de 68 anos e eu pratico junto. Conseguem adaptar o método para os dois ao mesmo tempo. É incrível a capacidade de personalização deles."</p>
+          <div class="depo-author">
+            <div class="depo-avatar" aria-hidden="true">M</div>
+            <div><div class="depo-name">Marcos V.</div><div class="depo-since">Aluno desde 2021</div></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── AGENDAMENTO ─── -->
+  <section id="agendamento" aria-labelledby="agendamento-heading">
+    <div class="container">
+      <div class="agendamento-inner">
+        <div class="agendamento-content">
+          <span class="agendamento-eyebrow" style="display:inline-block;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);font-size:0.6875rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;padding:0.3rem 0.85rem;border-radius:100px;margin-bottom:1.25rem;">Agende sua aula</span>
+          <h2 class="display agendamento-h2" id="agendamento-heading">
+            Comece com<br />uma aula<br />
+            <em style="font-style:italic;font-family:'Playfair Display',serif;font-weight:400;">experimental</em>
+          </h2>
+          <p class="agendamento-sub">Visite o estúdio, conheça os fisioterapeutas e experimente o método sem compromisso. Fale diretamente pelo WhatsApp — respondemos rapidamente.</p>
+          <a href="https://wa.me/5561992219300?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20aula%20experimental%20na%20Spine%20Fisio%20Pilates." target="_blank" rel="noopener" class="agendamento-btn" aria-label="Agendar aula via WhatsApp">
+            <span class="btn-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.523 5.845L.057 23.117a.5.5 0 00.617.636l5.494-1.435A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.791 9.791 0 01-5.003-1.369l-.359-.213-3.722.973.993-3.616-.233-.371A9.818 9.818 0 012.182 12C2.182 6.576 6.576 2.182 12 2.182S21.818 6.576 21.818 12 17.424 21.818 12 21.818z"/></svg>
+            </span>
+            Agendar pelo WhatsApp
+          </a>
+        </div>
+        <div class="agendamento-info">
+          <div class="info-card">
+            <div class="info-row">
+              <div class="info-icon"><svg fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.75" viewBox="0 0 24 24"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></div>
+              <div><div class="info-label">Endereço</div><div class="info-value">SCRN 710/711 Bloco C<br />Asa Norte, Brasília, DF</div></div>
+            </div>
+            <div class="info-row">
+              <div class="info-icon"><svg fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+              <div><div class="info-label">Horário</div><div class="info-value">Segunda a Sexta<br />7h00 – 20h30</div></div>
+            </div>
+            <div class="info-row">
+              <div class="info-icon"><svg fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.75" viewBox="0 0 24 24"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></div>
+              <div><div class="info-label">WhatsApp</div><div class="info-value">(61) 99221-9300</div></div>
+            </div>
+            <div class="info-row">
+              <div class="info-icon"><svg fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.75" viewBox="0 0 24 24"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
+              <div><div class="info-label">E-mail</div><div class="info-value">spinefisiopilates@gmail.com</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─── -->
+  <section id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="faq-sidebar reveal">
+          <span class="eyebrow">Dúvidas frequentes</span>
+          <h2 class="display faq-h2" id="faq-heading">Perguntas<br />e respostas</h2>
+          <p class="faq-sub">Não encontrou o que procurava? Fale diretamente com a equipe.</p>
+          <a href="https://wa.me/5561992219300?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20a%20Spine%20Fisio%20Pilates." target="_blank" rel="noopener" class="faq-contact-link">Falar com a equipe →</a>
+        </div>
+        <div class="faq-list reveal reveal-delay-1" role="list">
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">Preciso ter experiência com Pilates?<span class="faq-chevron" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg></span></button>
+            <div class="faq-answer" role="region"><p>Não, de forma alguma. Trabalhamos com alunos de todos os níveis, incluindo iniciantes absolutos. Na primeira sessão, fazemos uma avaliação postural e funcional para entender seu histórico e objetivos — e montamos um programa do zero, no seu ritmo.</p></div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">Qual a diferença para um estúdio comum?<span class="faq-chevron" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg></span></button>
+            <div class="faq-answer" role="region"><p>Todos os nossos profissionais são fisioterapeutas com certificação internacional — não apenas instrutores. Além disso, o limite de 2 alunos por aula garante atenção individualizada constante. Avaliamos, adaptamos e acompanhamos o progresso clínico de cada aluno.</p></div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">Posso fazer Pilates em reabilitação?<span class="faq-chevron" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg></span></button>
+            <div class="faq-answer" role="region"><p>Sim — é exatamente para isso que existimos. Nossa formação em fisioterapia nos permite trabalhar com pós-cirúrgicos, gestantes, atletas em recuperação, pessoas com dores crônicas, hérnia de disco, escoliose e outras condições. Cada caso é tratado com protocolo individualizado.</p></div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">Quantas aulas por semana são recomendadas?<span class="faq-chevron" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg></span></button>
+            <div class="faq-answer" role="region"><p>O ideal para manutenção e progressão consistente é de 2 a 3 aulas por semana. Para reabilitação ou objetivos específicos, podemos recomendar frequência diferente. Tudo é discutido na avaliação inicial, respeitando sua agenda e disponibilidade.</p></div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">Atendem crianças e idosos?<span class="faq-chevron" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg></span></button>
+            <div class="faq-answer" role="region"><p>Atendemos qualquer faixa etária com o programa adequado. Para idosos, o Pilates é especialmente eficaz para equilíbrio, força funcional e prevenção de quedas. Para adolescentes, trabalhamos postura e consciência corporal. Consulte-nos para avaliar o caso.</p></div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">Como funciona o agendamento?<span class="faq-chevron" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg></span></button>
+            <div class="faq-answer" role="region"><p>O agendamento é feito diretamente pelo WhatsApp — simples e sem burocracia. Enviamos a mensagem, verificamos disponibilidade e confirmamos o horário. Atendemos de segunda a sexta, das 7h00 às 20h30, no SCRN 710/711 Bloco C, Asa Norte.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTATO ─── -->
+  <section id="contato" style="background: #fff;" aria-labelledby="contato-heading">
+    <div class="container">
+      <div class="contato-grid">
+        <div class="reveal">
+          <span class="eyebrow">Venha nos visitar</span>
+          <h2 class="display contato-h2" id="contato-heading">Onde<br />estamos</h2>
+          <p class="contato-sub">Localizado na Asa Norte, Brasília. Fácil acesso de qualquer ponto do Plano Piloto.</p>
+          <div class="contato-channels">
+            <a href="https://wa.me/5561992219300" target="_blank" rel="noopener" class="channel-item" aria-label="WhatsApp (61) 99221-9300">
+              <div class="channel-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.523 5.845L.057 23.117a.5.5 0 00.617.636l5.494-1.435A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.791 9.791 0 01-5.003-1.369l-.359-.213-3.722.973.993-3.616-.233-.371A9.818 9.818 0 012.182 12C2.182 6.576 6.576 2.182 12 2.182S21.818 6.576 21.818 12 17.424 21.818 12 21.818z"/></svg></div>
+              <div><div class="channel-label">WhatsApp</div><div class="channel-value">(61) 99221-9300</div></div>
+            </a>
+            <a href="mailto:spinefisiopilates@gmail.com" class="channel-item" aria-label="E-mail spinefisiopilates@gmail.com">
+              <div class="channel-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
+              <div><div class="channel-label">E-mail</div><div class="channel-value">spinefisiopilates@gmail.com</div></div>
+            </a>
+            <a href="https://www.instagram.com/spinefisiopilates" target="_blank" rel="noopener" class="channel-item" aria-label="Instagram @spinefisiopilates">
+              <div class="channel-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"/></svg></div>
+              <div><div class="channel-label">Instagram</div><div class="channel-value">@spinefisiopilates</div></div>
+            </a>
+            <div class="horario-card">
+              <div class="horario-icon"><svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+              <div><div class="horario-label">Horário de atendimento</div><div class="horario-text">Segunda a Sexta · 7h00 – 20h30</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contato-map reveal reveal-delay-2">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.6247!2d-47.8971024!3d-15.7579064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3b18782a3cd1%3A0xcb8b63d8f29032fa!2sSpineFisio%20Pilates!5e0!3m2!1spt-BR!2sbr!4v1716824000000!5m2!1spt-BR!2sbr"
+            loading="lazy"
+            title="Localização Spine Fisio Pilates — SCRN 710/711 Bloco C, Brasília, DF"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Mapa da localização do estúdio Spine Fisio Pilates"
+          ></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="fotos-site-atual/spine%20logo.jpg" alt="Spine Fisio Pilates" class="footer-logo-img" />
+            <div class="footer-logo-text">Spine <span>Fisio</span> Pilates</div>
+          </div>
+          <p class="footer-tagline">Fisioterapia clínica e Pilates com certificação internacional. Asa Norte, Brasília, DF.</p>
+          <div class="footer-social" aria-label="Redes sociais">
+            <a href="https://www.instagram.com/spinefisiopilates" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://wa.me/5561992219300" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.523 5.845L.057 23.117a.5.5 0 00.617.636l5.494-1.435A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.791 9.791 0 01-5.003-1.369l-.359-.213-3.722.973.993-3.616-.233-.371A9.818 9.818 0 012.182 12C2.182 6.576 6.576 2.182 12 2.182S21.818 6.576 21.818 12 17.424 21.818 12 21.818z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navegação</div>
+          <ul class="footer-links" role="list">
+            <li><a href="#modalidades">Transformações</a></li>
+            <li><a href="#sobre">Profissionais</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Contato</div>
+          <ul class="footer-links" role="list">
+            <li><a href="https://wa.me/5561992219300" target="_blank" rel="noopener">(61) 99221-9300</a></li>
+            <li><a href="mailto:spinefisiopilates@gmail.com">spinefisiopilates@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/spinefisiopilates" target="_blank" rel="noopener">@spinefisiopilates</a></li>
+            <li><a href="#agendamento">Agendar aula</a></li>
+          </ul>
+          <div style="margin-top: 1.5rem; font-size: 0.8125rem; color: rgba(255,255,255,0.35); line-height: 1.6;">
+            SCRN 710/711 Bloco C<br />Asa Norte, Brasília, DF<br />Seg–Sex · 7h00 – 20h30
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Spine Fisio Pilates. Todos os direitos reservados.</span>
+        <span>SCRN 710/711 Bloco C · Brasília, DF</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── JS ─── -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .pillar-item, .beneficio-card').forEach(el => revealObserver.observe(el));
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-question').setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) { e.preventDefault(); window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); }
+      });
+    });
+
+    const navInner = document.querySelector('.nav-inner');
+    window.addEventListener('scroll', () => {
+      navInner.style.boxShadow = window.scrollY > 60
+        ? '0 8px 32px -8px rgba(127,61,159,0.18), inset 0 1px 0 rgba(255,255,255,0.7)'
+        : '0 4px 24px -4px rgba(127,61,159,0.12), inset 0 1px 0 rgba(255,255,255,0.7)';
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
