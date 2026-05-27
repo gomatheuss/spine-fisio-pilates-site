@@ -27,6 +27,8 @@
       --border: rgba(127, 61, 159, 0.12);
       --shadow-card: 0 4px 32px -8px rgba(127, 61, 159, 0.14);
       --shadow-hover: 0 12px 48px -8px rgba(127, 61, 159, 0.22);
+      --section-py: 7rem;
+      --section-header-mb: 4rem;
     }
 
     body {
@@ -75,7 +77,7 @@
     }
 
     .container { max-width: 1320px; margin: 0 auto; padding: 0 2rem; }
-    section { padding: 7rem 0; }
+    section { padding: var(--section-py) 0; }
 
     /* ─── NAV ─── */
     nav {
@@ -245,7 +247,7 @@
     .hero-scroll-hint::before { content: ''; display: block; width: 1px; height: 36px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.3)); }
 
     /* ─── PILLARS ─── */
-    #pillars { background: #fff; padding: 5rem 0; }
+    #pillars { background: #fff; padding: var(--section-py) 0; }
     .pillars-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 3rem; align-items: center; }
     .pillars-list { display: flex; flex-direction: column; gap: 2.5rem; }
     .pillar-item { display: flex; gap: 1.25rem; align-items: flex-start; opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -260,8 +262,8 @@
     .pillars-center-img img { width: 100%; height: 480px; object-fit: cover; }
 
     /* ─── MODALIDADES ─── */
-    #modalidades { padding: 7rem 0; }
-    .modalidades-header { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; margin-bottom: 4rem; }
+    #modalidades { padding: var(--section-py) 0; }
+    .modalidades-header { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; margin-bottom: var(--section-header-mb); }
     .modalidades-h2 { font-size: clamp(2.25rem, 3.5vw, 3.25rem); }
     .modalidades-desc { font-size: 1rem; color: var(--text-soft); padding-bottom: 0.5rem; }
     .modalidades-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -292,8 +294,8 @@
     .modal-desc { font-size: 0.875rem; color: var(--text-soft); font-weight: 300; line-height: 1.65; }
 
     /* ─── GALERIA ─── */
-    #galeria { padding: 5rem 0; background: #fff; overflow: hidden; }
-    .galeria-header { text-align: center; margin-bottom: 3.5rem; }
+    #galeria { padding: var(--section-py) 0; background: #fff; overflow: hidden; }
+    .galeria-header { text-align: center; margin-bottom: var(--section-header-mb); }
     .galeria-h2 { font-size: clamp(2rem, 3vw, 2.75rem); }
     .galeria-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto; gap: 1rem; }
     .gal-item { border-radius: 1.25rem; overflow: hidden; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -307,8 +309,8 @@
     .gal-item:nth-child(5) img { height: 230px; }
 
     /* ─── BENEFÍCIOS ─── */
-    #beneficios { padding: 7rem 0; background: var(--purple-light); }
-    .beneficios-header { text-align: center; margin-bottom: 4rem; }
+    #beneficios { padding: var(--section-py) 0; background: var(--purple-light); }
+    .beneficios-header { text-align: center; margin-bottom: var(--section-header-mb); }
     .beneficios-h2 { font-size: clamp(2rem, 3vw, 2.75rem); }
     .beneficios-sub { font-size: 1rem; color: var(--text-soft); max-width: 520px; margin: 1rem auto 0; }
     .beneficios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -342,8 +344,8 @@
     .beneficio-desc { font-size: 0.875rem; color: var(--text-soft); }
 
     /* ─── SOBRE ─── */
-    #sobre { background: #fff; padding: 7rem 0; }
-    .sobre-header { text-align: center; margin-bottom: 5rem; }
+    #sobre { background: #fff; padding: var(--section-py) 0; }
+    .sobre-header { text-align: center; margin-bottom: var(--section-header-mb); }
     .sobre-h2 { font-size: clamp(2rem, 3vw, 2.75rem); }
 
     .sobre-profissional {
@@ -400,8 +402,8 @@
     .cert-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; flex-shrink: 0; }
 
     /* ─── DEPOIMENTOS ─── */
-    #depoimentos { padding: 7rem 0; }
-    .depoimentos-header { text-align: center; margin-bottom: 4rem; }
+    #depoimentos { padding: var(--section-py) 0; }
+    .depoimentos-header { text-align: center; margin-bottom: var(--section-header-mb); }
     .depoimentos-h2 { font-size: clamp(2rem, 3vw, 2.75rem); }
     .depoimentos-scroll { display: flex; gap: 1.5rem; overflow-x: auto; padding: 0.5rem 0 2rem; scrollbar-width: none; scroll-snap-type: x mandatory; }
     .depoimentos-scroll::-webkit-scrollbar { display: none; }
@@ -415,7 +417,7 @@
     .depo-since { font-size: 0.75rem; color: var(--text-soft); }
 
     /* ─── AGENDAMENTO ─── */
-    #agendamento { background: var(--purple); padding: 7rem 0; position: relative; overflow: hidden; }
+    #agendamento { background: var(--purple); padding: var(--section-py) 0; position: relative; overflow: hidden; }
     #agendamento::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(154,197,37,0.15) 0%, transparent 70%); top: -200px; right: -100px; pointer-events: none; }
     .agendamento-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
     .agendamento-content { position: relative; z-index: 1; }
@@ -436,7 +438,7 @@
     .info-value { font-size: 0.9375rem; color: rgba(255,255,255,0.92); font-weight: 400; }
 
     /* ─── FAQ ─── */
-    #faq { padding: 7rem 0; background: #fff; }
+    #faq { padding: var(--section-py) 0; background: #fff; }
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .faq-sidebar { position: sticky; top: 8rem; }
     .faq-h2 { font-size: clamp(2.25rem, 3vw, 3rem); margin-bottom: 1.25rem; }
@@ -456,7 +458,7 @@
     .faq-answer p { padding: 0 1.5rem 1.25rem; font-size: 0.9rem; color: var(--text-soft); line-height: 1.7; }
 
     /* ─── CONTATO ─── */
-    #contato { padding: 7rem 0; }
+    #contato { padding: var(--section-py) 0; }
     .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .contato-h2 { font-size: clamp(2rem, 3vw, 2.75rem); margin-bottom: 1rem; }
     .contato-sub { font-size: 1rem; color: var(--text-soft); margin-bottom: 2.5rem; }
@@ -520,7 +522,23 @@
       .nav-links { display: none; }
       .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
-      section { padding: 4.5rem 0; }
+      section,
+      #pillars,
+      #modalidades,
+      #galeria,
+      #beneficios,
+      #sobre,
+      #depoimentos,
+      #agendamento,
+      #faq,
+      #contato { padding: 1rem 0 !important; }
+
+      .galeria-header { margin-bottom: 1.5rem; }
+      .beneficios-header { margin-bottom: 1.5rem; }
+      .sobre-header { margin-bottom: 2rem; }
+      .depoimentos-header { margin-bottom: 1.5rem; }
+      .modalidades-header { margin-bottom: 1.5rem; }
+      .sobre-profissional { margin-bottom: 2rem !important; }
 
       .hero-badge { bottom: 1.5rem; right: 1.5rem; }
       .hero-scroll-hint { display: none; }
