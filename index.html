@@ -190,16 +190,21 @@
       font-style: italic;
       font-family: 'Playfair Display', serif;
     }
-    .hero-brand {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: clamp(1.6rem, 2.8vw, 2.4rem);
-      color: #fff;
-      letter-spacing: 0.01em;
-      margin-bottom: 1.1rem;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    .hero-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 28px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 16px 48px -10px rgba(0,0,0,0.45);
     }
-    .hero-brand span { color: var(--green); font-style: italic; }
+    .hero-logo img {
+      width: auto;
+      height: clamp(120px, 16vw, 170px);
+      display: block;
+    }
 
     .hero-sub {
       font-size: 1.125rem;
@@ -628,7 +633,9 @@
     <div class="hero-grain" aria-hidden="true"></div>
 
     <div class="hero-content">
-      <div class="hero-brand reveal">Spine <span>Fisio</span> Pilates</div>
+      <div class="hero-logo reveal">
+        <img src="fotos-site-atual/spine%20logo.jpg" alt="Spine Fisio Pilates" />
+      </div>
       <span class="eyebrow-light reveal">Pilates Clínico · Brasília, DF</span>
       <h1 class="display hero-h1 reveal reveal-delay-1">
         Movimento com<br />
